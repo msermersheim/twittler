@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twittler</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <header>
+      <h1>Twittler</h1>
+    </header>
+    <section>
+    <script src="jquery.js"></script>
+    <script src="data_generator.js"></script>
+    <script>
+
+      $(document).ready(function(){
+        var $section = $('section');
+        $section.html('');
+
+        var index = streams.home.length - 1;
+        while(index >= 0){
+          var tweet = streams.home[index];
+          var $tweet = $('<div></div>');
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' tweetTime: '+tweet.created_at);
+          $tweet.appendTo($section);
+          index -= 1;
+        }
+
+      });
+
+    </script>
+    </section>
+    
+  </body>
+</html>
