@@ -1,0 +1,29 @@
+.tweetTotal {
+  border: 3px solid #949599;
+  height: 100px;
+  margin: 20px;
+  padding: 20px;
+  width: 600px;
+  white-space: pre;
+}
+
+section {
+	background-color: #00b0ff;
+	color: white;
+}
+
+#user {
+	font-size: 16;
+}
+
+.userTimeline {
+	display: none;
+}
+
+#timeStamp{
+	color: black;
+}
+
+.tweetTotal{
+
+}
