@@ -17,7 +17,7 @@ section {
 }
 
 .userTimeline {
-	display: none;
+	
 }
 
 #timeStamp{
@@ -26,4 +26,9 @@ section {
 
 .tweetTotal{
 
+}
+
+header{
+	background-color: #00b0ff;
+	text-align: center;
 }

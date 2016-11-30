@@ -17,6 +17,7 @@
 
       $(document).ready(function(){
         var $section = $('section');
+        var $aside = $('aside');
         $section.html('');
 
         
@@ -27,8 +28,9 @@
           var $user = $('<li id="user"></li>');
           var $created = $('<li id="timeStamp"></li>')
           var $tweet = $('<li id="tweet"></li>');
-          var $userTimeline = $('<ul = class"userTimeline">previous tweets</ul>');
-          var $timelineElements = $('<li></li>');
+          var $userTimeline = $('<div = class"userTimeline">previous tweets</div>');
+          var $timelineElements = $('<div></div>');
+          var $newTimeline = $('<ul class="newTimeline">previous tweets</ul>');
           
           $user.text('@' + tweet.user);
           $created.text(tweet.created_at);
@@ -39,7 +41,7 @@
           $user.appendTo($tweetTotal);
           $created.appendTo($tweetTotal);
           $tweet.appendTo($tweetTotal);
-          //$userTimeline.appendTo($user);
+          $userTimeline.appendTo($aside);
           //$timelineElements.appendTo($userTimeline);
           
           index -= 1;
@@ -47,12 +49,14 @@
           
         }
 
+        $('#user').on('click', function() {
+          $($aside).append($timelineElements);
+          });
+        
       });
 
       $(document).ready(function() {
-        $('#user').on('click', function() {
-          $(this).append($($userTimeline));
-          });
+        
 });
 
     </script>
