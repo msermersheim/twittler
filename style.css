@@ -1,3 +1,7 @@
+body {
+    background-color: #00b0ff;
+}
+
 .tweetTotal {
   border: 3px solid #949599;
   height: 100px;
@@ -5,6 +9,7 @@
   padding: 20px;
   width: 600px;
   white-space: pre;
+  position: relative;
 }
 
 section {
@@ -31,4 +36,16 @@ section {
 header{
 	background-color: #00b0ff;
 	text-align: center;
+}
+
+.pastTweets{
+	width: 500px;
+	height: 700px;
+	margin: 20px;
+  padding: 20px;
+	border: 3px solid #949599;
+  position: fixed;
+  right: 10px;
+  top: 60px;
+  display: none;
 }

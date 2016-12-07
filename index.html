@@ -12,52 +12,74 @@
     <section>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-    <script src="application.js"></script>
     <script>
-
+    var $header = $('header');
+    var $body = $('body');
+    var $section = $('section');
       $(document).ready(function(){
-        var $section = $('section');
-        var $aside = $('aside');
-        $section.html('');
-
         
+        $section.html('');        
         var index = streams.home.length - 1;
+        var $refresh = $('<button id="refresh">refresh tweets</button>');
         while(index >= 0){
+          
+          
           var tweet = streams.home[index];
+          
           var $tweetTotal = $('<ul class="tweetTotal"></ul>');
           var $user = $('<li id="user"></li>');
           var $created = $('<li id="timeStamp"></li>')
           var $tweet = $('<li id="tweet"></li>');
-          var $userTimeline = $('<div = class"userTimeline">previous tweets</div>');
-          var $timelineElements = $('<div></div>');
-          var $newTimeline = $('<ul class="newTimeline">previous tweets</ul>');
-          
+          var $pastTweets = $('<ol class="pastTweets">past tweets</ol>');
+          var $pastTweet1 = $('<li></li>');
+          var $pastTweet2 = $('<li></li>');
+          var $pastTweet3 = $('<li></li>');
+          var $pastTweet4 = $('<li></li>');
+          var $pastTweet5 = $('<li></li>');
+
           $user.text('@' + tweet.user);
           $created.text(tweet.created_at);
           $tweet.text(tweet.message);
-          $timelineElements.text(streams.users.mracus[0].message);  
+          var relativeUser = tweet.user;
           
+
+          $refresh.appendTo($header);
           $tweetTotal.appendTo($section);
           $user.appendTo($tweetTotal);
           $created.appendTo($tweetTotal);
           $tweet.appendTo($tweetTotal);
-          $userTimeline.appendTo($aside);
-          //$timelineElements.appendTo($userTimeline);
-          
-          index -= 1;
+          $pastTweets.appendTo($section);
+          $pastTweet1.appendTo($pastTweets);
+          $pastTweet2.appendTo($pastTweets);
+          $pastTweet3.appendTo($pastTweets);
+          $pastTweet4.appendTo($pastTweets);
+          $pastTweet5.appendTo($pastTweets);
 
-          
-        }
-
-        $('#user').on('click', function() {
-          $($aside).append($timelineElements);
+          $('#refresh').on('click', function() {
+          window.location.href=window.location.href;
           });
+
+          $('.tweetTotal').on('click','#user', function() {
+            $('.pastTweets').slideDown();
+            //var $something = $('streams.users.#user[1].message')
+            //$($pastTweets).append($timelineElements);
+          });
+
+          index -= 1;
+        }
+        
+        $pastTweet1.text(streams.users[relativeUser][1].message);
+        $pastTweet2.text(streams.users[relativeUser][2].message);
+        $pastTweet3.text(streams.users[relativeUser][3].message);
+        $pastTweet4.text(streams.users[relativeUser][4].message);
+        $pastTweet5.text(streams.users[relativeUser][5].message);
+        
         
       });
-
-      $(document).ready(function() {
-        
-});
+      $(document).ready(function(){
+        var $relativeUser = $('')
+      
+      });
 
     </script>
     </section>
